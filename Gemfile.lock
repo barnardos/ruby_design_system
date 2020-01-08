@@ -165,6 +165,7 @@ PLATFORMS
 
 DEPENDENCIES
   actionpack (~> 6.0)
+  activemodel (~> 6.0)
   barnardos-ruby_design_system!
   bundler (~> 1.17)
   faker (~> 2.9)
