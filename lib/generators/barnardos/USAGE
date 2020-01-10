@@ -1,0 +1,10 @@
+Description:
+    Generator installs Barnardos Design System gem for a Rails project.
+
+Example:
+    rails g barnardos:install
+
+    This will:
+        create postcss.config.js
+        install required npm packages
+        remove stylesheet_link_tag from application.html.erb
