@@ -1,16 +1,9 @@
 # frozen_string_literal: true
 
 RSpec.describe Barnardos::RubyDesignSystem::ComponentHelper, type: :helper do
-  require 'action_controller'
-  require 'action_view'
-  require 'nokogiri'
-  require 'faker'
   ActionView::Helpers.include described_class
   include ActionView::Helpers::UrlHelper
 
-  let(:helper) do
-    ActionController::Base.helpers
-  end
   let(:name) { Faker::Lorem.sentence }
   let(:url) { Faker::Internet.url(host: 'example.com') }
 
@@ -79,7 +72,6 @@ RSpec.describe Barnardos::RubyDesignSystem::ComponentHelper, type: :helper do
       helper.fieldset(options) { name }
     end
 
-    let(:html) { Nokogiri::HTML(subject) }
     let(:legend_html) { html.css('legend.Fieldset-legend') }
     let(:hint_html) { html.css('p.Hint') }
 
