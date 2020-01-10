@@ -1,25 +1,22 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require 'generator_spec'
 require 'generators/barnardos/install_generator'
 
-require 'tmpdir'
-
-TMP_ROOT = Pathname.new('../../../tmp')
-
-
 RSpec.describe Barnardos::Generators::InstallGenerator, type: :generator do
-  # destination File.expand_path('../../../tmp', File.dirname(__FILE__))
-
   include GeneratorSpec::TestCase
-  destination TMP_ROOT
-  # setup :prepare_destination
-  # teardown :cleanup_destination_root
-  # arguments %w(something)
+  destination '.'
 
   before(:all) do
-    FileUtils.rm_rf(TMP_ROOT)
-    prepare_destination
     run_generator
+  end
+
+  after(:all) do
+    FileUtils.rm_rf('node_modules')
+    FileUtils.rm('package.json')
+    FileUtils.rm('postcss.config.js')
+    FileUtils.rm('yarn.lock')
   end
 
   specify do
@@ -34,7 +31,4 @@ RSpec.describe Barnardos::Generators::InstallGenerator, type: :generator do
       end
     }
   end
-  # it 'creates a test initializer' do
-  #   assert_file 'postcss.config.js', 'require("postcss-reporter")'
-  # end
 end
