@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['rob.nichols@barnardos.org.uk',
                         'marcin.jedras@barnardos.org.uk']
 
-  spec.summary       = %q(Tools for appling Barnardo's Design System to Ruby projects.)
+  spec.summary       = %q(Tools for applying Barnardo's Design System to Ruby projects.)
   spec.description   = %q(Includes helper methods and modification to simple form.)
   spec.homepage      = 'https://design-system.barnardos.org.uk'
   spec.license       = 'MIT'
