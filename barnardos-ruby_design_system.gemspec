@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['rob.nichols@barnardos.org.uk',
                         'marcin.jedras@barnardos.org.uk']
 
-  spec.summary       = %q(Tools for appling Barnardo's Design System to Ruby projects.)
+  spec.summary       = %q(Tools for applying Barnardo's Design System to Ruby projects.)
   spec.description   = %q(Includes helper methods and modification to simple form.)
   spec.homepage      = 'https://design-system.barnardos.org.uk'
   spec.license       = 'MIT'
@@ -31,9 +31,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'simple_form', '~> 5.0'
 
   spec.add_development_dependency 'actionpack', '~> 6.0'
-  spec.add_development_dependency 'bundler', '~> 1.17'
   spec.add_development_dependency 'activemodel', '~> 6.0'
-  spec.add_development_dependency 'nokogiri', '~> 1.10'
+  spec.add_development_dependency 'bundler', '~> 1.17'
   spec.add_development_dependency 'faker', '~> 2.9'
   spec.add_development_dependency 'generator_spec'
   spec.add_development_dependency 'nokogiri', '~> 1.10'
