@@ -1,8 +1,9 @@
 /.bundle/
 /.yardoc
 /_yardoc/
-/coverage/
+/node_modules/
 /doc/
+/coverage/
 /pkg/
 /spec/reports/
 /tmp/
@@ -10,4 +11,7 @@
 
 # rspec failure tracking
 .rspec_status
+
 TAGS
+package.json
+yarn.lock

@@ -3,6 +3,22 @@
 module Barnardos
   module RubyDesignSystem
     module Inputs
+      # Overrides behaviour of the collection check boxes input in simple_form forms.
+      #
+      # Usage:
+      # Add the following class to the host project at app/inputs/collection_check_boxes_input.rb
+      #
+      #   class CollectionCheckBoxesInput < Barnardos::RubyDesignSystem::Inputs::CollectionCheckBoxesInput; end
+      #
+      # With that in place, the following code will output a set of collection boxes wrapped in the required
+      # Design System components:
+      #
+      #    <%= simple_form_for(foo) do |form| %>
+      #      <%= form.association :bars, as: :check_boxes, wrapper: :in_fieldset, boolean_style: :inline %>
+      #    <% end %>
+      #
+      # Where `foo` has_many `bars`
+      #
       class CollectionCheckBoxesInput < SimpleForm::Inputs::CollectionCheckBoxesInput
         def input(wrapper_options = nil)
           input_html_classes.unshift('Switch-input')
