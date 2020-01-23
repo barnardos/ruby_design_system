@@ -21,6 +21,8 @@ module Barnardos
       ].freeze
 
       def install
+        directory 'inputs', 'app/inputs'
+
         `yarn add #{PACKAGES.join(' ')}`
         `yarn add #{DEV_PACKAGES.join(' ')} --dev`
         copy_file 'postcss.config.js', 'postcss.config.js'
