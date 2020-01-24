@@ -2,7 +2,7 @@
 
 Tools for applying Barnardo's Design System to Ruby projects.
 
-The tools include helper methods and modification to simple form to make it Design System compliant.
+The tools include helper methods and modifications to simple_form to make it Design System compliant.
 
 ## Installation
 
@@ -16,7 +16,7 @@ And then execute:
 
     $ bundle
 
-With the gem install, a Rails generator is added that will set up the host app. To run the generator
+With the gem installed, a Rails generator is added that will set up the host app. To run the generator
 execute the following at app root:
 
     $ rails g barnardos:install
@@ -39,29 +39,17 @@ The file `package.json` is updated to include declarations for PostCSS and relat
 
 The PostCSS configuration file `/postcss.config.js` is copied to root
 
-#### Updates `/app/views/layouts/application.html.erb`
-
-All CSS should be defined within the folder `app/javascript` so the `stylesheet_link_tag` declaration can be removed
-from the application template. Also make sure that JavaScript is loaded here with `javascript_pack_tag`. For example:
-
-```
-  <%= javascript_pack_tag 'application' %>
-```
-
 ### Sets up simple form to work with the design system
 
 A set of classes are inserted into `app/inputs`. These modify the rails input classes so that when used
 with simple_form, they create components that match the design system.
 
+### Adds `app/helpers/barnardos_design_system_helper.rb`
+
+This helper contains the statement `include Barnardos::RubyDesignSystem::ComponentHelper` which makes the helper
+method defined in this gem, available to the views in the host app.
+
 ## Using the components
-
-### `app/helpers/application_helper.rb`
-
-To use the helper methods defined in this gem, add the following to `ApplicationHelper`:
-
-```ruby
-include Barnardos::RubyDesignSystem::ComponentHelper
-```
 
 ### `/app/javascript/packs/application.js`
 
@@ -87,9 +75,12 @@ placing them in alphabetical order is a good idea as it makes them a little easi
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests.
+You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the
+version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version,
+push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
