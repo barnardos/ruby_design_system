@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    barnardos-ruby_design_system (0.1.1)
+    barnardos-ruby_design_system (0.1.2)
       simple_form (~> 5.0)
 
 GEM

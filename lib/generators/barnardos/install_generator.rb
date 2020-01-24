@@ -22,14 +22,11 @@ module Barnardos
 
       def install
         directory 'inputs', 'app/inputs'
+        directory 'helpers', 'app/helpers'
 
         `yarn add #{PACKAGES.join(' ')}`
         `yarn add #{DEV_PACKAGES.join(' ')} --dev`
         copy_file 'postcss.config.js', 'postcss.config.js'
-        if File.exist?('app/views/layouts/application.html.erb')
-          gsub_file('app/views/layouts/application.html.erb',
-                    /<%= stylesheet_link_tag[^%]*%>?/, '')
-        end
         rake 'webpacker:clobber'
         `yarn`
       end

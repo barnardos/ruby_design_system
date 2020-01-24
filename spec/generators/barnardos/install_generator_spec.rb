@@ -15,6 +15,7 @@ RSpec.describe Barnardos::Generators::InstallGenerator, type: :generator do
   after(:all) do
     FileUtils.rm_rf('node_modules')
     FileUtils.rm_rf('app/inputs')
+    FileUtils.rm_rf('app/helpers')
     FileUtils.rm('package.json')
     FileUtils.rm('postcss.config.js')
     FileUtils.rm('yarn.lock')
@@ -43,6 +44,16 @@ RSpec.describe Barnardos::Generators::InstallGenerator, type: :generator do
         file 'collection_select_input.rb'
         file 'string_input.rb'
         file 'text_input.rb'
+      end
+    }
+  end
+
+  it 'copies helper into app/helpers' do
+    expect(destination_root).to have_structure {
+      directory 'app/helpers' do
+        file 'barnardos_design_system_helper.rb' do
+          contains 'include Barnardos::RubyDesignSystem::ComponentHelper'
+        end
       end
     }
   end
