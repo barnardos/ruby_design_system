@@ -37,7 +37,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'generator_spec'
   spec.add_development_dependency 'nokogiri', '~> 1.10'
   spec.add_development_dependency 'rails', '~> 6.0'
-  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rspec-rails', '~> 3.0.0'
   spec.add_development_dependency 'yard', '~> 0.9'
